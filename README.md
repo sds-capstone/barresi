@@ -1,3 +1,3 @@
 # barresi
-Team Members:
-Carol Milton
+Team Members:\
+- Carol Milton
