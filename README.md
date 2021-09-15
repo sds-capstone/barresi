@@ -1,3 +1,4 @@
 # barresi
-Team Members:\
+Team Members:
 - Carol Milton
+- Catherine Kung
