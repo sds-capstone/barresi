@@ -3,24 +3,24 @@ title: Zebra Fish Visualization with Imaris
 author:
   - name: Catherine Kung
     affil: 1,\ddagger,*
-  - name: John Doe
-    affil: 2, \dagger, \ddagger
+  - name: Summer Yu
+    affil: 2,\ddagger,* 
+  - name:  
+    affil: 3,\ddagger,*
   - name: 
-    affil: 3, 
-  - name:
-    affil: 4,
+    affil: 4,\ddager,*
     
 affiliation:
   - num: 1
     address: |
-      Smith College - 
+      Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
     email: ckung@smith.edu
   - num: 2
     address: |
-      Your department
-      Street, City, Country
-    email: mail@mail.com
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
+    email: syu@smith.edu
 # firstnote to eighthnote
 firstnote: |
   Current address: Updated affiliation
@@ -28,6 +28,7 @@ secondnote: |
   These authors contributed equally to this work.
 correspondence: |
   ckung@smith.edu; Tel.: +1-413-801-1410.
+  syu@smith.edu; Tel.: +1-413-404-7578.
 journal: 
 type: 
 status: 
@@ -77,7 +78,8 @@ abbreviations:
 output: rticles::mdpi_article
 ---
 
-# Abstract (Carol and Haley)
+# Abstract (Carol and Haley) 
+*Refer to line 38*
 
 # Introduction(Catherine)
 We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
@@ -86,7 +88,7 @@ We are working with Professor Barresi's lab in trying to create a plugin for Ima
 # Data(Summer)
 The data is currently being gathered from the [name of microscope] of Professor Barresi's lab, and will consist of [type of file] files of zebra fish embryo slices directly be piplined into the Imaris Software to create a 3D picture. As the data collection has only just begun, we don not have a lot of data at our disposal. However, from the case studies Imaris provides, we were able to better understand how to navigate the data once we do attain them.
 
-
+*collaborate on references*
 
 
 #Methods (not ours)
