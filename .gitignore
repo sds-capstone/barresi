@@ -46,3 +46,5 @@ vignettes/*.pdf
 *.out
 
 *.aux
+
+*.knit.md
