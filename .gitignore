@@ -42,3 +42,7 @@ vignettes/*.pdf
 *.tex
 
 *.log
+
+*.out
+
+*.aux
