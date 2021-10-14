@@ -73,11 +73,16 @@ output: rticles::mdpi_article
 ---
 
 # Introduction
-We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the
+We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
 
 
-# Materials and Methods
+# Data
+The data is currently being gathered from the [name of microscope] of Professor Barresi's lab, and will consist of [type of file] files of zebra fish embryo slices directly be piplined into the Imaris Software to create a 3D picture. As the data collection has only just begun, we don not have a lot of data at our disposal. However, from the case studies Imaris provides, we were able to better understand how to navigate the data once we do attain them.
 
+
+
+
+#Methods
 Materials and Methods should be described with sufficient details to allow others to replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
 
 Research manuscripts reporting large datasets that are deposited in a publicly available database should specify where the data have been deposited and provide the relevant accession numbers. If the accession numbers have not yet been obtained at the time of submission, please state that they will be provided during review. They must be provided prior to publication.
