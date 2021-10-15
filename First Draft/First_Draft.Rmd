@@ -77,10 +77,8 @@ abbreviations:
 output: rticles::mdpi_article
 ---
 
-
 # Introduction(Catherine)
 We are working with Professor Barresi's lab to achieve the following goals: 1) use Imaris to find evidence that answers the questions the lab is interested in 2) document protocols for going from data aggregation to data utilization 3) create a plugin for Imaris to automate data analyzations on 3D and 4D images. Questions the lab is interested in include: a) if bioelectric signals are important in creating the early brain, b) if migratorial cell population (crimneou) lays thegroundwork for the neurons to form formation of our face and c) how an embryonic brain form for Zebra Fishes. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have a high of a resolution as Imaris has, therefore the lab had decided to witch to Imaris. However, they are not as familiar with this software, and thus needs a good documented protocol to help guide their usage. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, a plugin is needed to automate the analyzation and orientation process.
-
 
 # Data(Summer)
 The data is currently being gathered from the light sheet microscope of Professor Barresi's lab, and will consist of .tif files of Zebrafish embryo slices directly pipelined into the IMARIS Software to create a 3D picture. As the data collection has only just begun, we do not have a lot of data at our disposal. However, from the case studies IMARIS provides, we are able to better understand how to navigate the data once we do attain them.
