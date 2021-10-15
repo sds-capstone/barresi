@@ -5,7 +5,7 @@ author:
     affil: 1,\ddagger,*
   - name: Summer Yu
     affil: 2,\ddagger,* 
-  - name:  
+  - name:  Carol Milton
     affil: 3,\ddagger,*
   - name: 
     affil: 4,\ddagger,*
@@ -21,6 +21,11 @@ affiliation:
       Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
     email: syu@smith.edu
+  - num: 3
+    address: |
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
+    email: ctmilton@smith.edu
 # firstnote to eighthnote
 firstnote: |
   Current address: Updated affiliation
@@ -29,6 +34,7 @@ secondnote: |
 correspondence: |
   ckung@smith.edu; Tel.: +1-413-801-1410.
   syu@smith.edu; Tel.: +1-413-404-7578.
+  ctmilton@smith.edu; Tel.: +1-508-930-5791.
 journal: 
 type: 
 status: 
