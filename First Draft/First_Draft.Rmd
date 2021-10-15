@@ -5,9 +5,9 @@ author:
     affil: 1,\ddagger,*
   - name: Summer Yu
     affil: 2,\ddagger,* 
-  - name:  Carol Milton
+  - name:  Haley Schmidt
     affil: 3,\ddagger,*
-  - name: 
+  - name:  Carol Milton
     affil: 4,\ddagger,*
     
 affiliation:
@@ -25,6 +25,11 @@ affiliation:
     address: |
       Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
+    email: heschmidt@smith.edu
+  - num: 4
+    address: |
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
     email: ctmilton@smith.edu
 # firstnote to eighthnote
 firstnote: |
@@ -34,6 +39,7 @@ secondnote: |
 correspondence: |
   ckung@smith.edu; Tel.: +1-413-801-1410.
   syu@smith.edu; Tel.: +1-413-404-7578.
+  heschmidt@smith.edu; Tel.: +1-651-315-2760.
   ctmilton@smith.edu; Tel.: +1-508-930-5791.
 journal: 
 type: 
@@ -85,14 +91,16 @@ output: rticles::mdpi_article
 ---
 
 # Abstract (Carol and Haley) 
-*Refer to line 38*
+The Barresi Lab at Smith College has recently acquired a light sheet microscope that will be utilized to study bioelectric patterns in embryonic development of zebrafish. The advanced light sheet microscope captures 3D images of the embryos which can be analyzed through IMARIS, a new software being implemented in the lab. In order to translate the 3D images into data interpretable by biologists, we are developing a data pipeline. To do so we are writing plugins for IMARIS which will automate fluorescence, intensity, and volume calculations. This process will be done using Python and Fiji ImageJ. These plugins will ultimately streamline the analysis process of incoming data from the light sheet microscope. 
+
+*Refer to line 45*
 
 # Introduction(Catherine)
-We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
+We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for people who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
 
 
 # Data(Summer)
-The data is currently being gathered from the [name of microscope] of Professor Barresi's lab, and will consist of [type of file] files of zebra fish embryo slices directly be piplined into the Imaris Software to create a 3D picture. As the data collection has only just begun, we don not have a lot of data at our disposal. However, from the case studies Imaris provides, we were able to better understand how to navigate the data once we do attain them.
+The data is currently being gathered from the light sheet microscope of Professor Barresi's lab, and will consist of .tif files of zebra fish embryo slices directly piplined into the Imaris Software to create a 3D picture. As the data collection has only just begun, we don not have a lot of data at our disposal. However, from the case studies Imaris provides, we were able to better understand how to navigate the data once we do attain them.
 
 *collaborate on references*
 
