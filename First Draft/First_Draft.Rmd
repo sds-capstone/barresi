@@ -2,14 +2,13 @@
 title: Zebra Fish Visualization with Imaris
 author:
   - name: Catherine Kung
-    affil: 1,\ddagger,*
+    affil: 1,\dagger,*
   - name: Summer Yu
-    affil: 2,\ddagger,* 
+    affil: 2,\dagger,* 
   - name:  
-    affil: 3,\ddagger,*
+    affil: 3,\dagger,*
   - name: 
-    affil: 4,\ddagger,*
-    
+    affil: 4,\dagger,*
 affiliation:
   - num: 1
     address: |
@@ -23,8 +22,6 @@ affiliation:
     email: syu@smith.edu
 # firstnote to eighthnote
 firstnote: |
-  Current address: Updated affiliation
-secondnote: |
   These authors contributed equally to this work.
 correspondence: |
   ckung@smith.edu; Tel.: +1-413-801-1410.
@@ -82,7 +79,7 @@ output: rticles::mdpi_article
 *Refer to line 38*
 
 # Introduction(Catherine)
-We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
+We are working with Professor Barresi's lab to achieve the following goals: 1) use Imaris to find evidence that answers the questions the lab is interested in 2) document protocols for going from data aggregation to data utilization 3) create a plugin for Imaris to automate data analyzations on 3D and 4D images. Questions the lab is interested in include: a) if bioelectric signals are important in creating the early brain, b) if migratorial cell population (crimneou) lays thegroundwork for the neurons to form formation of our face and c) how an embryonic brain form for Zebra Fishes. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have a high of a resolution as Imaris has, therefore the lab had decided to witch to Imaris. However, they are not as familiar with this software, and thus needs a good documented protocol to help guide their usage. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, a plugin is needed to automate the analyzation and orientation proces.
 
 
 # Data(Summer)
