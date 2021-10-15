@@ -86,12 +86,18 @@ We are working with Professor Barresi's lab in trying to create a plugin for Ima
 
 
 # Data(Summer)
-The data is currently being gathered from the [name of microscope] of Professor Barresi's lab, and will consist of [type of file] files of zebra fish embryo slices directly be piplined into the Imaris Software to create a 3D picture. As the data collection has only just begun, we don not have a lot of data at our disposal. However, from the case studies Imaris provides, we were able to better understand how to navigate the data once we do attain them.
+Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with IMARIS software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages Zebra Fishes' embryo. 
+
+In this study, the dependent variables are development time for each embryonic stage, intensity of dyed embryos stratified by the factor of age, and spatial position of embryos. The independent variables are the strength of the trans-genes, tools needed in order to produce the florescence. What's more, the units of observation in this study is the number of embryos collected in a batch, which composes the number of fertilized eggs a female Zebra fish produced in a hatch. 
+
+Some of the limitations of this research is the speed of the light-sheet microscopy we utilized, since the system takes 10 seconds taking photograph of a single Z-stack imaging. Additionally, another major constraint will be its capacity in taking a given number of embryos in a given time frame. For now, the capacity and the speed of the light-sheet microscopy system allows a production of 240 samples for a week if collecting a single batch a week. Mistakes in the process of data collection also can pose damage to the embryo samples. 
+
+Files of zebra fish embryo slices then directly be pipeline into the IMARIS Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.  
 
 *collaborate on references*
 
 
-#Methods (not ours)
+#Methods (Later)
 Materials and Methods should be described with sufficient details to allow others to replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
 
 Research manuscripts reporting large datasets that are deposited in a publicly available database should specify where the data have been deposited and provide the relevant accession numbers. If the accession numbers have not yet been obtained at the time of submission, please state that they will be provided during review. They must be provided prior to publication.
