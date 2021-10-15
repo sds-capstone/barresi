@@ -1,5 +1,5 @@
 ---
-title: Zebra Fish Visualization with Imaris
+title: Zebra Fish Visualization with IMARIS
 author:
   - name: Catherine Kung
     affil: 1,\dagger,*
@@ -44,11 +44,11 @@ status:
 bibliography: mybibfile.bib
 appendix: appendix.tex
 simplesummary: |
-  Using Imaris to visualize embryo development of Zebra fish
+  Using IMARIS to visualize embryo development of Zebra fish
 abstract: |
   The Barresi Lab at Smith College has recently acquired a light-sheet microscope that will be utilized to study bio-electric patterns in embryonic development of Zebrafish. The advanced light-sheet microscope captures 3D images of the embryos which can be analyzed through IMARIS, a new software being implemented in the lab. In the beginning of our project, we completed multiple online tutorials to understand IMARIS and the way it visualizes and analyzes given data. Once the software was set up in the Barresi Lab, we visited the Work Station multiple times to familiarize ourselves with working with IMARIS. In order to translate the 3D images into data interpretable to biologists, we will develop a data pipeline. To do so we will write plugins for IMARIS which will automate fluorescence, intensity, and volume calculations. This process will be completed using Python and Fiji ImageJ. These plugins will ultimately streamline the analysis process of incoming data from the light-sheet microscope. 
 keywords: |
-  Imaris; Plugin; Automate
+  IMARIS; Plugin; Automate
 acknowledgement: |
   All sources of funding of the study should be disclosed. Please clearly 
   indicate grants that you have received in support of your research work. 
@@ -77,16 +77,14 @@ abbreviations:
 output: rticles::mdpi_article
 ---
 
-# Introduction(Catherine)
-We are working with Professor Barresi's lab to achieve the following goals: 1) use Imaris to find evidence that answers the questions the lab is interested in 2) document protocols for going from data aggregation to data utilization 3) create a plugin for Imaris to automate data analyzations on 3D and 4D images. Questions the lab is interested in include: a) if bioelectric signals are important in creating the early brain, b) if migratorial cell population (crimneou) lays thegroundwork for the neurons to form formation of our face and c) how an embryonic brain form for Zebra Fishes. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have a high of a resolution as Imaris has, therefore the lab had decided to witch to Imaris. However, they are not as familiar with this software, and thus needs a good documented protocol to help guide their usage. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, a plugin is needed to automate the analyzation and orientation process.
+# Introduction
+We are working with Professor Barresi's lab to achieve the following goals: 1) Use IMARIS to find evidence that supports the goals of the lab 2) Document protocols for going from data aggregation to data utilization 3) Create a plugin for IMARIS to automate data analyses on 3D and 4D images. Questions the lab is interested in include: a) Are bioelectric signals are important in creating the early brain? b) Do migratorial cell population (crimneou) lays the groundwork for the neurons to form formation of our face? c) How do embryonic brains form for Zebra Fishes. IMAEIS is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have as high of a resolution as IMARIS, therefore the lab had decided to switch softwares. However, they are not as familiar with this software, and thus need a well documented protocol to help guide their usage. Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, plugins via Fiji ImageJ are needed to automate the analysis and orientation process. 
 
-# Data(Summer)
-The data is currently being gathered from the light sheet microscope of Professor Barresi's lab, and will consist of .tif files of Zebrafish embryo slices directly pipelined into the IMARIS Software to create a 3D picture. As the data collection has only just begun, we do not have a lot of data at our disposal. However, from the case studies IMARIS provides, we are able to better understand how to navigate the data once we do attain them.
-
-*collaborate on references*
+# Data
+The data is currently being gathered from the light-sheet microscope of Professor Barresi's lab, and will consist of .tif files of Zebrafish embryo slices directly pipelined into the IMARIS Software to create a 3D picture. As the data collection has only just begun, we do not have a lot of data at our disposal. However, from the case studies IMARIS provides, we are able to better understand how to navigate the data once we do attain them.
 
 
-#Methods (not ours)
+#Methods
 Materials and Methods should be described with sufficient details to allow others to replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
 
 Research manuscripts reporting large datasets that are deposited in a publicly available database should specify where the data have been deposited and provide the relevant accession numbers. If the accession numbers have not yet been obtained at the time of submission, please state that they will be provided during review. They must be provided prior to publication.
