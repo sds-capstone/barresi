@@ -1,5 +1,5 @@
 ---
-title: Zebra Fish Visualization with IMARIS
+title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
   - name: Catherine Kung
     affil: 1,\dagger,*
