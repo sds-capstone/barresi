@@ -1,5 +1,5 @@
----
-title: Processing Zebrafish Image Data using IMARIS
+
+title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
   - name: Catherine Kung
     affil: 1,\dagger,*
