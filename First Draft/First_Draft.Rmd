@@ -1,36 +1,19 @@
----
-title: Zebra Fish Visualization with Imaris
+
+title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
   - name: Catherine Kung
     affil: 1,\dagger,*
   - name: Summer Yu
-    affil: 2,\ddagger,* 
+    affil: 1,\dagger,* 
   - name:  Haley Schmidt
-    affil: 3,\ddagger,*
+    affil: 1,\dagger,*
   - name:  Carol Milton
-    affil: 4,\ddagger,*
+    affil: 1,\dagger,*
 affiliation:
   - num: 1
     address: |
       Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
-    email: ckung@smith.edu
-  - num: 2
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: syu@smith.edu
-  - num: 3
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: heschmidt@smith.edu
-  - num: 4
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: ctmilton@smith.edu
-# firstnote to eighthnote
 firstnote: |
   These authors contributed equally to this work.
 correspondence: |
@@ -44,27 +27,19 @@ status:
 bibliography: mybibfile.bib
 appendix: appendix.tex
 simplesummary: |
-  Using Imaris to visualize embryo development of Zebra fish
+  Using IMARIS to visualize embryo development of Zebra fish
 abstract: |
   The Barresi Lab at Smith College has recently acquired a light-sheet microscope that will be utilized to study bio-electric patterns in embryonic development of Zebrafish. The advanced light-sheet microscope captures 3D images of the embryos which can be analyzed through IMARIS, a new software being implemented in the lab. In the beginning of our project, we completed multiple online tutorials to understand IMARIS and the way it visualizes and analyzes given data. Once the software was set up in the Barresi Lab, we visited the Work Station multiple times to familiarize ourselves with working with IMARIS. In order to translate the 3D images into data interpretable to biologists, we will develop a data pipeline. To do so we will write plugins for IMARIS which will automate fluorescence, intensity, and volume calculations. This process will be completed using Python and Fiji ImageJ. These plugins will ultimately streamline the analysis process of incoming data from the light-sheet microscope. 
 keywords: |
-  Imaris; Plugin; Automate
+  IMARIS; Plugin; Automate
 acknowledgement: |
-  All sources of funding of the study should be disclosed. Please clearly 
-  indicate grants that you have received in support of your research work. 
-  Clearly state if you received funds for covering the costs to publish in open 
-  access.
+
 authorcontributions: |
-  For research articles with several authors, a short paragraph specifying their 
-  individual contributions must be provided. The following statements should be 
-  used ``X.X. and Y.Y. conceive and designed the experiments; X.X. performed the 
-  experiments; X.X. and Y.Y. analyzed the data; W.W. contributed 
-  reagents/materials/analysis tools; Y.Y. wrote the paper.'' Authorship must be
-  limited to those who have contributed substantially to the work reported.
+
 conflictsofinterest: |
-  he authors declare no conflict of interest.
+  The authors declare no conflict of interest.
 sampleavailability: |
-  Samples of the compounds ...... are available from the authors.
+ 
 abbreviations:
   - short: MDPI
     long: Multidisciplinary Digital Publishing Institute
@@ -77,12 +52,10 @@ abbreviations:
 output: rticles::mdpi_article
 ---
 
+# Introduction
+We are working with Professor Barresi's lab to achieve the following goals: 1) Use IMARIS to find evidence that supports the goals of the lab 2) Document protocols for going from data aggregation to data utilization 3) Create a plugin for IMARIS to automate data analyses on 3D and 4D images. Questions the lab is interested in include: a) Are bioelectric signals are important in creating the early brain? b) Does the migratorial cell population (crimneou) lay the groundwork for the neurons to form the formation of our face? c) How do embryonic brains form for Zebra Fishes? IMARIS is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other software that allowed for 3D visualizations, it didn't have as high of a resolution as IMARIS, therefore the lab had decided to switch software. However, they are not as familiar with this software, and thus need well documented protocols to help guide their usage. Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, plugins via Fiji ImageJ are needed to automate the analysis and orientation process.  The full work will be available on GitHub\footnote{\texttt{GitHub Repository}: \url{https://github.com/sds-capstone/barresi}.}
 
-# Introduction(Catherine)
-We are working with Professor Barresi's lab to achieve the following goals: 1) use Imaris to find evidence that answers the questions the lab is interested in 2) document protocols for going from data aggregation to data utilization 3) create a plugin for Imaris to automate data analyzations on 3D and 4D images. Questions the lab is interested in include: a) if bioelectric signals are important in creating the early brain, b) if migratorial cell population (crimneou) lays thegroundwork for the neurons to form formation of our face and c) how an embryonic brain form for Zebra Fishes. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have a high of a resolution as Imaris has, therefore the lab had decided to witch to Imaris. However, they are not as familiar with this software, and thus needs a good documented protocol to help guide their usage. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, a plugin is needed to automate the analyzation and orientation process.
-
-
-# Data(Summer)
+# Data
 Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with IMARIS software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages Zebra Fishes' embryo. 
 
 In this study, the dependent variables are development time for each embryonic stage, intensity of dyed embryos stratified by the factor of age, and spatial position of embryos. The independent variables are the strength of the trans-genes, tools needed in order to produce the florescence. What's more, the units of observation in this study is the number of embryos collected in a batch, which composes the number of fertilized eggs a female Zebra fish produced in a hatch. 
@@ -98,86 +71,18 @@ Files of zebra fish embryo slices then directly be pipeline into the IMARIS Soft
 #Methods (Later)
 Materials and Methods should be described with sufficient details to allow others to replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
 
-Research manuscripts reporting large datasets that are deposited in a publicly available database should specify where the data have been deposited and provide the relevant accession numbers. If the accession numbers have not yet been obtained at the time of submission, please state that they will be provided during review. They must be provided prior to publication.
 
-Interventionary studies involving animals or humans, and other studies require ethical approval must list the authority that provided approval and the corresponding ethical approval code.
+#Methods
+
 
 # Results
 
-This section may be divided by subheadings. It should provide a concise and precise description of the experimental results, their interpretation as well as the experimental conclusions that can be drawn.
-
-## Subsection Heading Here
-
-Subsection text here.
-
-### Subsubsection Heading Here
-
-Bulleted lists look like this:
-
-* First bullet
-* Second bullet
-* Third bullet
-
-Numbered lists can be added as follows:
-
-1. First item
-2. Second item
-3. Third item
-
-The text continues here.
-
-All figures and tables should be cited in the main text as Figure 1, Table 1, etc.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=3 cm]{logo-mdpi}
-\caption{This is a figure, Schemes follow the same formatting. If there are multiple panels, they should be listed as: (\textbf{a}) Description of what is contained in the first panel. (\textbf{b}) Description of what is contained in the second panel. Figures should be placed in the main text near to the first time they are cited. A caption on a single line should be centered.}
-\end{figure}
-
-
-\begin{table}[H]
-\caption{This is a table caption. Tables should be placed in the main text near to the first time they are cited.}
-\centering
-%% \tablesize{} %% You can specify the fontsize here, e.g.  \tablesize{\footnotesize}. If commented out \small will be used.
-\begin{tabular}{ccc}
-\toprule
-\textbf{Title 1}	& \textbf{Title 2}	& \textbf{Title 3}\\
-\midrule
-entry 1		& data			& data\\
-entry 2		& data			& data\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-This is an example of an equation:
-
-\begin{equation}
-\mathbb{S}
-\end{equation}
-<!-- If the documentclass option "submit" is chosen, please insert a blank line before and after any math environment (equation and eqnarray environments). This ensures correct linenumbering. The blank line should be removed when the documentclass option is changed to "accept" because the text following an equation should not be a new paragraph. -->
-
-<!-- Please punctuate equations as regular text. Theorem-type environments (including propositions, lemmas, corollaries etc.) can be formatted as follows: -->
-Example of a theorem:
-\begin{Theorem}
-Example text of a theorem.
-\end{Theorem}
-
-The text continues here. Proofs must be formatted as follows:
-
-Example of a proof:
-\begin{proof}[Proof of Theorem 1]
-Text of the proof. Note that the phrase `of Theorem 1' is optional if it is clear which theorem is being referred to.
-\end{proof}
-The text continues here.
 
 # Discussion
 
-Authors should discuss the results and how they can be interpreted in perspective of previous studies and of the working hypotheses. The findings and their implications should be discussed in the broadest context possible. Future research directions may also be highlighted.
 
 # Conclusion
 
-This section is not mandatory, but can be added to the manuscript if the discussion is unusually long or complex.
 
 # Patents
 
-This section is not mandatory, but may be added if there are patents resulting from the work reported in this manuscript.
