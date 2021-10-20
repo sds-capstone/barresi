@@ -2,14 +2,13 @@
 title: Zebra Fish Visualization with Imaris
 author:
   - name: Catherine Kung
-    affil: 1,\ddagger,*
+    affil: 1,\dagger,*
   - name: Summer Yu
     affil: 2,\ddagger,* 
-  - name:  
+  - name:  Haley Schmidt
     affil: 3,\ddagger,*
-  - name: 
+  - name:  Carol Milton
     affil: 4,\ddagger,*
-    
 affiliation:
   - num: 1
     address: |
@@ -21,14 +20,24 @@ affiliation:
       Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
     email: syu@smith.edu
+  - num: 3
+    address: |
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
+    email: heschmidt@smith.edu
+  - num: 4
+    address: |
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
+    email: ctmilton@smith.edu
 # firstnote to eighthnote
 firstnote: |
-  Current address: Updated affiliation
-secondnote: |
   These authors contributed equally to this work.
 correspondence: |
   ckung@smith.edu; Tel.: +1-413-801-1410.
   syu@smith.edu; Tel.: +1-413-404-7578.
+  heschmidt@smith.edu; Tel.: +1-651-315-2760.
+  ctmilton@smith.edu; Tel.: +1-508-930-5791.
 journal: 
 type: 
 status: 
@@ -37,19 +46,9 @@ appendix: appendix.tex
 simplesummary: |
   Using Imaris to visualize embryo development of Zebra fish
 abstract: |
-  A single paragraph of about 200 words maximum. For research articles, 
-  abstracts should give a pertinent overview of the work. We strongly encourage
-  authors to use the following style of structured abstracts, but without 
-  headings: 1) Background: Place the question addressed in a broad context and
-  highlight the purpose of the study; 2) Methods: Describe briefly the main
-  methods or treatments applied; 3) Results: Summarize the article's main 
-  findings; and 4) Conclusion: Indicate the main conclusions or interpretations. 
-  The abstract should be an objective representation of the article, it must not 
-  contain results which are not presented and substantiated in the main text and 
-  should not exaggerate the main conclusions.
+  The Barresi Lab at Smith College has recently acquired a light-sheet microscope that will be utilized to study bio-electric patterns in embryonic development of Zebrafish. The advanced light-sheet microscope captures 3D images of the embryos which can be analyzed through IMARIS, a new software being implemented in the lab. In the beginning of our project, we completed multiple online tutorials to understand IMARIS and the way it visualizes and analyzes given data. Once the software was set up in the Barresi Lab, we visited the Work Station multiple times to familiarize ourselves with working with IMARIS. In order to translate the 3D images into data interpretable to biologists, we will develop a data pipeline. To do so we will write plugins for IMARIS which will automate fluorescence, intensity, and volume calculations. This process will be completed using Python and Fiji ImageJ. These plugins will ultimately streamline the analysis process of incoming data from the light-sheet microscope. 
 keywords: |
-  Imaris; ; keyword 3 (list three to ten pertinent keywords specific 
-  to the article, yet reasonably common within the subject discipline.).
+  Imaris; Plugin; Automate
 acknowledgement: |
   All sources of funding of the study should be disclosed. Please clearly 
   indicate grants that you have received in support of your research work. 
@@ -78,11 +77,9 @@ abbreviations:
 output: rticles::mdpi_article
 ---
 
-# Abstract (Carol and Haley) 
-*Refer to line 38*
 
 # Introduction(Catherine)
-We are working with Professor Barresi's lab in trying to create a plugin for Imaris to automate data analyzations on 3D and 4D images. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, especially for peole who are new to Imaris, and can be more difficult to replicate in research studies. As such, a plugin that automates the data processing is needed.
+We are working with Professor Barresi's lab to achieve the following goals: 1) use Imaris to find evidence that answers the questions the lab is interested in 2) document protocols for going from data aggregation to data utilization 3) create a plugin for Imaris to automate data analyzations on 3D and 4D images. Questions the lab is interested in include: a) if bioelectric signals are important in creating the early brain, b) if migratorial cell population (crimneou) lays thegroundwork for the neurons to form formation of our face and c) how an embryonic brain form for Zebra Fishes. Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze flurescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have a high of a resolution as Imaris has, therefore the lab had decided to witch to Imaris. However, they are not as familiar with this software, and thus needs a good documented protocol to help guide their usage. Currently, analyzations of data require users to manually create reference points and surfaces across the image to gather informations. However, such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, a plugin is needed to automate the analyzation and orientation process.
 
 
 # Data(Summer)
@@ -93,6 +90,7 @@ In this study, the dependent variables are development time for each embryonic s
 Some of the limitations of this research is the speed of the light-sheet microscopy we utilized, since the system takes 10 seconds taking photograph of a single Z-stack imaging. Additionally, another major constraint will be its capacity in taking a given number of embryos in a given time frame. For now, the capacity and the speed of the light-sheet microscopy system allows a production of 240 samples for a week if collecting a single batch a week. Mistakes in the process of data collection also can pose damage to the embryo samples. 
 
 Files of zebra fish embryo slices then directly be pipeline into the IMARIS Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.  
+
 
 *collaborate on references*
 
