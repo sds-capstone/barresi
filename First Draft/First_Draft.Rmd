@@ -1,36 +1,19 @@
----
-title: Zebra Fish Visualization with IMARIS
+
+title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
   - name: Catherine Kung
     affil: 1,\dagger,*
   - name: Summer Yu
-    affil: 2,\ddagger,* 
+    affil: 1,\dagger,* 
   - name:  Haley Schmidt
-    affil: 3,\ddagger,*
+    affil: 1,\dagger,*
   - name:  Carol Milton
-    affil: 4,\ddagger,*
+    affil: 1,\dagger,*
 affiliation:
   - num: 1
     address: |
       Smith College - SDS department
       1 Chapin Way, Northampton, MA, USA
-    email: ckung@smith.edu
-  - num: 2
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: syu@smith.edu
-  - num: 3
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: heschmidt@smith.edu
-  - num: 4
-    address: |
-      Smith College - SDS department
-      1 Chapin Way, Northampton, MA, USA
-    email: ctmilton@smith.edu
-# firstnote to eighthnote
 firstnote: |
   These authors contributed equally to this work.
 correspondence: |
@@ -54,7 +37,7 @@ acknowledgement: |
 authorcontributions: |
 
 conflictsofinterest: |
-  he authors declare no conflict of interest.
+  The authors declare no conflict of interest.
 sampleavailability: |
  
 abbreviations:
@@ -70,10 +53,11 @@ output: rticles::mdpi_article
 ---
 
 # Introduction
-We are working with Professor Barresi's lab to achieve the following goals: 1) Use IMARIS to find evidence that supports the goals of the lab 2) Document protocols for going from data aggregation to data utilization 3) Create a plugin for IMARIS to automate data analyses on 3D and 4D images. Questions the lab is interested in include: a) Are bioelectric signals are important in creating the early brain? b) Do migratorial cell population (crimneou) lays the groundwork for the neurons to form formation of our face? c) How do embryonic brains form for Zebra Fishes. IMAEIS is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other softwares that allowed for 3D visualizations, it didn't have as high of a resolution as IMARIS, therefore the lab had decided to switch softwares. However, they are not as familiar with this software, and thus need a well documented protocol to help guide their usage. Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, plugins via Fiji ImageJ are needed to automate the analysis and orientation process. 
+We are working with Professor Barresi's lab to achieve the following goals: 1) Use IMARIS to find evidence that supports the goals of the lab 2) Document protocols for going from data aggregation to data utilization 3) Create a plugin for IMARIS to automate data analyses on 3D and 4D images. Questions the lab is interested in include: a) Are bioelectric signals are important in creating the early brain? b) Does the migratorial cell population (crimneou) lay the groundwork for the neurons to form the formation of our face? c) How do embryonic brains form for Zebra Fishes? IMARIS is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other software that allowed for 3D visualizations, it didn't have as high of a resolution as IMARIS, therefore the lab had decided to switch software. However, they are not as familiar with this software, and thus need well documented protocols to help guide their usage. Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, plugins via Fiji ImageJ are needed to automate the analysis and orientation process.  The full work will be available on GitHub\footnote{\texttt{GitHub Repository}: \url{https://github.com/sds-capstone/barresi}.}
 
 # Data
-The data is currently being gathered from the light-sheet microscope of Professor Barresi's lab, and will consist of .tif files of Zebrafish embryo slices directly pipelined into the IMARIS Software to create a 3D picture. As the data collection has only just begun, we do not have a lot of data at our disposal. However, from the case studies IMARIS provides, we are able to better understand how to navigate the data once we do attain them.
+The data is currently being gathered from the light-sheet microscope from Professor Barresi's lab, and will consist of .tif files of Zebrafish embryo slices directly pipelined into the IMARIS Software to create a 3D picture. As the data collection has only just begun, we do not have a lot of data at our disposal. However, from the case studies IMARIS provides, we are able to better understand how to navigate the data once we do attain them.
+
 
 
 #Methods
