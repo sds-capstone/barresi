@@ -29,7 +29,7 @@ appendix: appendix.tex
 simplesummary: |
   Using IMARIS to visualize embryo development of Zebra fish
 abstract: |
-  The Barresi Lab at Smith College recently acquired a light-sheet microscope that will utilize the study of bio-electric patterns in embryonic development of Zebrafish. This advanced light-sheet microscope captures 3D images of embryos which are then analyzed through Imaris, a new software being implemented in the lab. In order to translate the raw 3D images into data interpretable to biologists, we develop a data pipeline. To do so, we write python plugins for IMARIS which automate fluorescence, intensity, and volume calculations. These plugins will ultimately streamline the process of analyzing incoming data from the light-sheet microscope.
+  The Barresi Lab at Smith College recently acquired a light-sheet microscope through a grant from the Arnold and Mabel Beckman Foundation. The lab is interested in studying bio-electric patterns in embryonic development of zebrafish, which utilizes the 3D images from this microscope. Imaris, a newly implemented software in the lab, analyzes images of embryos from the microscope. Although it is an excellent tool for 3D image analysis, the lab requires more tailored processes to make computations more efficient. To do so, we are writing python plugins for Imaris which automate fluorescence, intensity, and volume calculations. These plugins will ultimately streamline the process of analyzing incoming data from the light-sheet microscope.
 keywords: |
   IMARIS; Plugin; Automate
 acknowledgement: |
