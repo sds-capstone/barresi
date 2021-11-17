@@ -1,3 +1,4 @@
+---
 
 title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
@@ -60,7 +61,11 @@ The Barresi Lab at Smith College is a developmental biology lab led by Professor
     a) Are bioelectric signals important in creating the early brain? 
     b) Does the migratorial cell population (crimneou) lay the groundwork for the neurons to form the formation of our face? 
     c) How do embryonic brains form for Zebra Fishes? 
-Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other software that allowed for 3D visualizations, it didn't have as high of a resolution as Imaris, therefore the lab had decided to switch software. However, they are not as familiar with this software, and thus need well documented protocols to help guide their usage. Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult, and the comparisons can be messy due to the different orientations the data may come in. As such, plugins created using the python programming language are needed to automate the analysis and orientation process. Over the course of this project, we have learned how to create python plugins in Imaris, successfully connected VS Code to Imaris, compared already existing plugins, and started the devlepment of our first plugin based on the requirements given by the Barresi Lab. The full work will be available on GitHub\footnote{\texttt{GitHub Repository}: \url{https://github.com/sds-capstone/barresi}.}
+    d) What is the distance of each region to the farthest brain region?
+Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other software that allowed for 3D visualizations, it didn't have as high of a resolution as Imaris, therefore the lab had decided to switch software. However, they are not as familiar with this software, and thus need well documented protocols to help guide their usage. 
+Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult. As such, plugins are needed to help make the calculations and observations easier. While many plugins exist in Imaris' official website \footnote{\texttt{Imaris Open}: \url{https://imaris.oxinst.com/open/}.}, many are either for older versions of Imaris or don't interact with or calculate the statistics of the specific brain regions that interests the Barresi Lab. 
+Due to the restricted time we have, we decide to focus solely on the last plugin that calculates the distance of each region to the farthest brain region. The full work is available on GitHub\footnote{\texttt{GitHub Repository}: \url{https://github.com/sds-capstone/barresi}.}
+
 
 # Data
 Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with Imaris software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization [@NIKONSMICROSCOPY]. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages Zebra Fishes' embryo. 
@@ -81,7 +86,9 @@ During the early planning stages of this study, whether to employ ImageJ or Imar
 	
 Originally, derived from the fact that Python has more computational simplicity and our past coding experience mainly resided in Python, we first navigated the computational software to be Jupytor notebook, where we developed the code for the plugin envisioned by Barresi lab. Then, connection of the work Folder with z-stack images can be connected to the Imaris python path based on protocols from Imaris Xtension User Guide on creating a path for Xtension in Imaris. Python version 3.7.12 was downloaded to the Imaris workstation through the official website [@pythonorg] . After downloading Jupytor and Git for windows in console command, we failed to set up Github extension for Jupytor with the guideline from a public Github repository [@wallen_2021]. halted with repeating error messages when establishing git configurations. Later, Visual Studio (VS) Code was finalized as the computational software for our plug-in development based on its smooth connection with the Github desktop, codes developed in VS code can be pushed to Github without the need for an extension.
 
-Aside from computational simplicity, python was also the language we were most familiar with out of the languages available for direct interaction with the Imaris software function. To create the plugin, we linked Visual Studios onto Imaris by adding the Imaris path and PYTHONPATH into the environment We used GitHub as the method to share and update our code. To interact with the Imaris API, we needed to place in `import ImarisLib.py` in the plugin file, Lastly, we grouped all the possible plugins into a folder and added the path to the folder into Imaris so that all the plugins in that folder are accessible.
+
+Aside from computational simplicity, python was also the language we were most familiar with out of the languages available for direct interaction with the Imaris software function. To create the plugin, we linked Visual Studios onto Imaris by adding the Imaris path and PYTHONPATH into the environment. To interact with the Imaris API, we needed to place in `import ImarisLib.py` in the plugin file, Lastly, we grouped all the possible plugins into a folder and added the path to the folder into Imaris so that all the plugins in that folder are accesible.
+
 
 # Results
 
@@ -92,5 +99,4 @@ Aside from computational simplicity, python was also the language we were most f
 # Conclusion
 
 
-# Patents
 
