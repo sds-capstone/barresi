@@ -77,7 +77,7 @@ Some of the limitations of this research is the speed of the light-sheet microsc
 Files of zebrafish embryo slices then directly be pipeline into the Imaris Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.
 
 
-#Methods
+# Methods
 
 Based on results generated from previous studies using confocal microscopy images as data for analysis purposes, even a single software package from a workable analytical program can be used for data procession [@ZINCHUK2009125]. Although there exist a number of multidimensional analytical programs which allows for accurate quantification via high quality visualization, like BioImageXD and Icy, Imaris is the most suitable platform to use in that it has quality image resolution and built-in algorithms to generate workable plug-ins and fundamental descriptive statistics directly in an excel document format. 
 
