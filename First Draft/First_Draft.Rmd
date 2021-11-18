@@ -32,7 +32,7 @@ simplesummary: |
 abstract: |
   The Barresi Lab at Smith College recently acquired a light-sheet microscope through a grant from the Arnold and Mabel Beckman Foundation. The lab is interested in studying bio-electric patterns in embryonic development of zebrafish, which utilizes the 3D images from this microscope. Imaris, a newly implemented software in the lab, analyzes images of embryos from the microscope. Although it is an excellent tool for 3D image analysis, the lab requires more tailored processes to make computations more efficient. To do so, we are writing python plugins for Imaris which automate fluorescence, intensity, and volume calculations. These plugins will ultimately streamline the process of analyzing incoming data from the light-sheet microscope.
 keywords: |
-  IMARIS; Plugin; Automate
+  Imaris; Plugin; Automate
 acknowledgement: |
 
 authorcontributions: |
@@ -57,7 +57,7 @@ output: rticles::mdpi_article
 The Barresi Lab at Smith College is a developmental biology lab led by Professor Michael Barresi. They investigate the molecular and cellular mechanisms which govern how the nervous system is built by using zebrafish as a model system. The lab’s research is divided into three projects to address how the neurons are created, how the nervous system gets wired, and what sorts of environmental factors impact neural development. The lab has recently acquired a new light-sheet miscroscope which sends 3D images of zebrafish embryos to be analyzed in Imaris. Our group is working with the lab to achieve the following goals:
 1) Use Imaris to find evidence that supports the goals of the lab 
 2) Document protocols for going from data aggregation to data utilization 
-3) Create a plugin for IMARIS to automate data analyses on 3D and 4D images. Questions the lab is interested in include: 
+3) Create a plugin for Imaris to automate data analyses on 3D and 4D images. Questions the lab is interested in include: 
     a) Are bioelectric signals important in creating the early brain? 
     b) Does the migratorial cell population (crimneou) lay the groundwork for the neurons to form the formation of our face? 
     c) How do embryonic brains form for Zebra Fishes? 
@@ -68,14 +68,13 @@ Due to the restricted time we have, we decide to focus solely on the last plugin
 
 
 # Data
-Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with Imaris software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization [@NIKONSMICROSCOPY]. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages Zebra Fishes' embryo. 
+Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with Imaris software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization [@NIKONSMICROSCOPY]. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages zebrafish's embryo. 
 
-In this study, the dependent variables are development time for each embryonic stage, intensity of dyed embryos stratified by the factor of age, and spatial position of embryos. The independent variables are the strength of the trans-genes, tools needed in order to produce the florescence. What's more, the units of observation in this study is the number of embryos collected in a batch, which composes the number of fertilized eggs a female Zebra fish produced in a hatch. 
+In this study, the dependent variables are development time for each embryonic stage, intensity of dyed embryos stratified by the factor of age, and spatial position of embryos. The independent variables are the strength of the trans-genes, tools needed in order to produce the fluorescence. What's more, the units of observation in this study is the number of embryos collected in a batch, which composes the number of fertilized eggs a female Zebra fish produced in a hatch. 
 
-Some of the limitations of this research is the speed of the light-sheet microscopy we utilized, since the system takes 10 seconds taking photograph of a single Z-stack imaging. Additionally, another major constraint will be its capacity in taking a given number of embryos in a given time frame. For now, the capacity and the speed of the light-sheet microscopy system allows a production of 240 samples for a week if collecting a single batch a week. Mistakes in the process of data collection also can pose damage to the embryo samples. 
+Some of the limitations of this research is the speed of the light-sheet microscopy we utilize, since the system takes 10 seconds to take a photograph of a single Z-stack imaging. Additionally, another major constraint will be its capacity in taking a given number of embryos in a given time frame. For now, the capacity and the speed of the light-sheet microscopy system allows a production of 240 samples for a week if collecting a single batch a week. Mistakes in the process of data collection also can pose damage to the embryo samples. 
 
-Files of zebra fish embryo slices then directly be pipeline into the IMARIS Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.  
-
+Files of zebrafish embryo slices then directly be pipeline into the Imaris Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.
 
 
 #Methods
