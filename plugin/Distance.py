@@ -34,6 +34,7 @@ import ImarisLib
 # GUI imports
 from tkinter import *
 from tkinter import messagebox
+from pandas import DataFrame
 
 def farthestDistance(aImarisId):
     # Create an ImarisLib object
@@ -55,6 +56,13 @@ def farthestDistance(aImarisId):
         vNewIntensity=float(vNewIntensity)
         #aCopyAll=False
         root.destroy()
+
+    def __msgbox(aText):
+        vTk = Tk()
+        vTk.wm_title("XTDisplayImarisId")
+        vWidget = Label(vTk, text = aText, justify = 'left', padx = 10, pady = 10)
+        vWidget.pack()
+        vTk.mainloop()
     
     """ def All():
         global Entry1, vNewRadius, aCopyAll
@@ -104,38 +112,33 @@ def farthestDistance(aImarisId):
     aYvoxelSpacing= (vDataMax[1]-vDataMin[1])/vDataSize[1]
     aZvoxelSpacing = round((vDataMax[2]-vDataMin[2])/vDataSize[2],3)
     vSmoothingFactor=aXvoxelSpacing*2
+    vSelected = vImarisApplication.GetSurpassSelection()
+    #vSpots = vFactory.ToSpots(vSelected)
     
-    vSpots = vFactory.ToSpots(vImarisApplication.GetSurpassSelection())
-    #vNumberOfSurfaces = vSurfaces.GetNumberOfSurfaces()
+   # vSelectedSpots = vSpots.GetSelectedIndices()
     
-    vSelectedSpots = vSpots.GetSelectedIndices()
 
-    aPositionsXYZ = vSelectedSpots.GetPositionsXYZ()
+    #aPositionsXYZ = vSpots.GetPositionsXYZ()
+    vImage = vImarisApplication.GetImage(0)
+    #vDataSetOut=vImarisApplication.GetImageProcessing().DistanceTransformDataSet(vSelected,vNewIntensity,False)
+    #vNumberOfImages = vImarisApplication.GetNumberOfImages()
 
-    vDataSetOut=vImarisApplication.GetImageProcessing.DistanceTransformDataSet(aPositionsXYZ,vNewIntensity,False)
+    vFarthestDistance = 0
 
-    vDistanceText = "Farthest Distance:" #+ vFarthestDistance #once we actually sort it out!! 
+    """ for i in range(0, len(vDataSetOut)):
+        if vDataSetOut[i] > vFarthestDistance :
+            vFarthestDistance = vDataSetOut[i]
+     """
+    vText = 'Farthest Distance: ' + str(vSelected)
 
+    #__msgbox(vText)
 
-    ##Not outputting
-    output=Tk()
-    output.geometry("200x50-0+0")
-    #Set input as the top level window
-    output.attributes("-topmost", True)
-    ##################################################################
-    #Set input in center on screen
-    # Gets the requested values of the height and widht.
-    windowWidth = output.winfo_reqwidth()
-    windowHeight = output.winfo_reqheight()
-    # Gets both half the screen width/height and window width/height
-    positionRight = int(output.winfo_screenwidth()/2 - windowWidth/2)
-    positionDown = int(output.winfo_screenheight()/2 - windowHeight/2)
-    # Positions the window in the center of the page.
-    output.geometry("+{}+{}".format(positionRight, positionDown))
-    ##################################################################
+    #df = DataFrame({'Point': 1, 'Farthest Distance': vFarthestDistance})
+   # df.to_excel('test.xslx', sheet_name= 'sheet1', index = False)
+    f = open(r'C:\Users\zfishlab\Downloads\test.txt', 'w')
+    f.write(vText)
+    f.close()
     
-    Label(output,text=vDistanceText).grid(row=0)
-    mainloop()
 
 
     
