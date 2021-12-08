@@ -38,29 +38,29 @@ The following steps have already been implemented at the Imaris Workstation.
 
 Code to link to ImarisLib: 
 
-import ImarisLib
+    import ImarisLib
 
-def BLANK(aImarisId):
+    def BLANK(aImarisId):
 
-    # Create an ImarisLib object
+      # Create an ImarisLib object
     
-    vImarisLib = ImarisLib.ImarisLib()
+      vImarisLib = ImarisLib.ImarisLib()
     
-    # Get an imaris object with id aImarisId
+      # Get an imaris object with id aImarisId
     
-    vImarisApplication = vImarisLib.GetApplication(aImarisId)
+      vImarisApplication = vImarisLib.GetApplication(aImarisId)
     
-    # Get the factory
+      # Get the factory
     
-    vFactory = vImarisApplication.GetFactory()
+      vFactory = vImarisApplication.GetFactory()
     
-    # Get the currently loaded dataset
+      # Get the currently loaded dataset
     
-    vImage = vImarisApplication.GetDataSet()
+      vImage = vImarisApplication.GetDataSet()
     
-	  # Get the Surpass scene
+      # Get the Surpass scene
 	  
-	  vSurpassScene = vImarisApplication.GetSurpassScene()
+      vSurpassScene = vImarisApplication.GetSurpassScene()
 
 
 ## Creating Input and Output
