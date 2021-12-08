@@ -41,15 +41,25 @@ Code to link to ImarisLib:
 import ImarisLib
 
 def BLANK(aImarisId):
+
     # Create an ImarisLib object
+    
     vImarisLib = ImarisLib.ImarisLib()
+    
     # Get an imaris object with id aImarisId
+    
     vImarisApplication = vImarisLib.GetApplication(aImarisId)
+    
     # Get the factory
+    
     vFactory = vImarisApplication.GetFactory()
+    
     # Get the currently loaded dataset
+    
     vImage = vImarisApplication.GetDataSet()
+    
 	  # Get the Surpass scene
+	  
 	  vSurpassScene = vImarisApplication.GetSurpassScene()
 
 
