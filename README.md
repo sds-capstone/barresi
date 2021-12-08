@@ -9,7 +9,7 @@ Team Members:
 # Installations Necessary for Python Plugins in Imaris
 The following steps have already been implemented at the Imaris Workstation.
 
-1. Connect plugin folder to the IMARIS python path [source](https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/multiphoton-core/documents/Imaris-XTension-User-Guide.pdf)
+1. [Connect](https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/multiphoton-core/documents/Imaris-XTension-User-Guide.pdf) plugin folder to the IMARIS python path
 
 2. Find Path created for Xtension -> download Python 3.7.12 -> download VS Code in console command
 
@@ -17,7 +17,7 @@ The following steps have already been implemented at the Imaris Workstation.
 
 ## Setting up Github extension for VS Code:
 
-[guideline](https://thenewstack.io/integrate-jupyter-notebooks-with-github/)
+[guideline source](https://thenewstack.io/integrate-jupyter-notebooks-with-github/)
 
 1. If there is an Error Message: not find “requests” -> Solve with pip install requests
 
@@ -43,23 +43,18 @@ Code to link to ImarisLib:
     def BLANK(aImarisId):
 
       # Create an ImarisLib object
-    
       vImarisLib = ImarisLib.ImarisLib()
     
       # Get an imaris object with id aImarisId
-    
       vImarisApplication = vImarisLib.GetApplication(aImarisId)
     
       # Get the factory
-    
       vFactory = vImarisApplication.GetFactory()
     
       # Get the currently loaded dataset
-    
       vImage = vImarisApplication.GetDataSet()
     
       # Get the Surpass scene
-	  
       vSurpassScene = vImarisApplication.GetSurpassScene()
 
 
@@ -82,9 +77,11 @@ Use the tkinter Python library to get input from the user and display output thr
         vTk.mainloop()
 
 
-## Navigating to Data Fields
+## Navigating to ImarisLib Function Documentation
 
-Open file > Help > Programming Interface > Data Structures > Data Fields > All. Search through functions by letter. 
+Open Help > Programming Interface > Data Structures > Data Fields > All
+
+Search through functions by letter. 
 
 ## Integrating XTension within Imaris
 
