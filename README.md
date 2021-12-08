@@ -19,17 +19,17 @@ The following steps have already been implemented at the Imaris Workstation.
 
 [guideline](https://thenewstack.io/integrate-jupyter-notebooks-with-github/)
 
-  a. If there is an Error Message: not find “requests” -> Solve with pip install requests
+1. If there is an Error Message: not find “requests” -> Solve with pip install requests
 
-  b. Genereate ssh-keygen: id_rsa(file name), barresiprojectfall2021(key)
+2. Genereate ssh-keygen: id_rsa(file name), barresiprojectfall2021(key)
 
-  c. Add to ssh key in Github account and clone
+3. Add to ssh key in Github account and clone
 
-  d. git config --global user.name to enter username
+4. git config --global user.name to enter username
 
-  e. git config --global user.email to enter email
+5. git config --global user.email to enter email
 
-  f. [git clone](https://github.com/sat28/githubcommit)
+6. [git clone](https://github.com/sat28/githubcommit)
 
 
 # Documentation of Python XTensions for Imaris
