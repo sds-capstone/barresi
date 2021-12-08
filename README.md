@@ -36,17 +36,38 @@ The following steps have already been implemented at the Imaris Workstation.
 
 ## Linking to ImarisLib
 
+Code to link to ImarisLib: 
+
+import ImarisLib
+
+def BLANK(aImarisId):
+    # Create an ImarisLib object
+    vImarisLib = ImarisLib.ImarisLib()
+    # Get an imaris object with id aImarisId
+    vImarisApplication = vImarisLib.GetApplication(aImarisId)
+    # Get the factory
+    vFactory = vImarisApplication.GetFactory()
+    # Get the currently loaded dataset
+    vImage = vImarisApplication.GetDataSet()
+	  # Get the Surpass scene
+	  vSurpassScene = vImarisApplication.GetSurpassScene()
+
 
 ## Creating Input and Output
 
 
+
 ## Navigating to Data Fields
 
+Open file > Help > Programming Interface > Data Structures > Data Fields > All. Search through functions by letter. 
 
-## Connecting XTension
+## Integrating XTension within Imaris
 
+In the Edit menu select Menu > Preferences > Custom Tools. In the XTension Folders field, specify the folder with the XTension file by clicking on the Add button. Once the path is established, Imaris will automatically update the list of available XTensions within that folder.
 
 ## Running an XTension
+
+Once XTension is integrated, it will automatically show up under the Image Processing tab. Click on your XTension to run it.
 
 
 
