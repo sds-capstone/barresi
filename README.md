@@ -85,7 +85,9 @@ Search through functions by letter.
 
 ## Integrating XTension within Imaris
 
-In the Edit menu select Menu > Preferences > Custom Tools. In the XTension Folders field, specify the folder with the XTension file by clicking on the Add button. Once the path is established, Imaris will automatically update the list of available XTensions within that folder.
+In the Edit menu select Menu > Preferences > Custom Tools
+
+In the XTension Folders field, specify the folder with the XTension file by clicking on the Add button. Once the path is established, Imaris will automatically update the list of available XTensions within that folder.
 
 ## Running an XTension
 
