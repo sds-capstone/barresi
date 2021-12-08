@@ -63,8 +63,23 @@ Code to link to ImarisLib:
       vSurpassScene = vImarisApplication.GetSurpassScene()
 
 
-## Creating Input and Output
+## Getting User Input and Displaying Output
+Use the tkinter Python library to get input from the user and display output through the GUI (Graphical User Interface).
 
+    #GUI imports for inputs and outputs
+    from tkinter import *
+    from tkinter import messagebox
+
+    #Example of Getting User Input through Entry.get() function
+    vThreshold=Entry1.get()
+    
+    #How to Create a Message Box to Dislay Text Output
+    def __msgbox(aText):
+        vTk = Tkinter.Tk()
+        vTk.wm_title("XTDisplayImarisId")
+        vWidget = Tkinter.Label(vTk, text = aText, justify = 'left', padx = 10, pady = 10)
+        vWidget.pack()
+        vTk.mainloop()
 
 
 ## Navigating to Data Fields
