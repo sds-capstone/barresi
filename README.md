@@ -15,9 +15,11 @@ The following steps have already been implemented at the Imaris Workstation.
 
 3. Download Git for windows -> Download extension for Github
 
-4. Setting up Github extension for VS Code: [guideline](https://thenewstack.io/integrate-jupyter-notebooks-with-github/)
+## Setting up Github extension for VS Code:
 
-  a. If there is an Error Message: not find “requests” -> Solve with pip install requests 
+[guideline](https://thenewstack.io/integrate-jupyter-notebooks-with-github/)
+
+  a. If there is an Error Message: not find “requests” -> Solve with pip install requests
 
   b. Genereate ssh-keygen: id_rsa(file name), barresiprojectfall2021(key)
 
