@@ -1,4 +1,3 @@
-
 ---
 title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
 author:
@@ -40,16 +39,6 @@ authorcontributions: |
 conflictsofinterest: |
   The authors declare no conflict of interest.
 sampleavailability: |
- 
-abbreviations:
-  - short: MDPI
-    long: Multidisciplinary Digital Publishing Institute
-  - short: DOAJ
-    long: Directory of open access journals
-  - short: TLA
-    long: Three letter acronym
-  - short: LD 
-    long: linear dichroism
 output: rticles::mdpi_article
 ---
 
@@ -90,9 +79,101 @@ Aside from computational simplicity, python was also the language we were most f
 As the Barresi Lab is still developing their zebrafish data, they state that they would like to use Imaris to do manual calculations. Thus, we are not fully automating their processes yet. We are creating a plugin to find the distance between a user specified region to the farthest brain region. Imaris mainly uses the data models *spots*, *surfaces*, *cells*, and *filaments* to identify and analyze all of the zebrafish data. Initially, the intensity of each object within the image data was the core attibute to create the distance plugin. However, many of the existing plugins use *surfaces* for their calculations and we are concerned about overlooking some important information by looking at intensity alone. Therefore, to create the distance plugin, we use both intensity and the *surface* and *spot* data models.
 
 # Results
+Prior to creating any plugin, we needed to make sure that we have all the setup so that the users can access a working plugin. FIrst step is to add the plugin into the [menu name] by adding the following at the top of the plugin file:
 
+    #    <CustomTools>
+    #      <Menu>
+    #       <Item name="Name Shown on Menu" icon="Python3">
+    #         <Command>Python3XT::NameoftheFunction(%i)</Command>
+    #       </Item>
+    #      </Menu>
+    #    </CustomTools>
+We could also create submenus by adding encompassing <Item></Item> in <Submenu></Submenu>, but chose not to as we don't have other similar plugins at the moment. We then finished the setup by linking the file to Imaris through the following code:
+    import ImarisLib
 
-# Discussion
+    def BLANK(aImarisId):
+
+      # Create an ImarisLib object
+      vImarisLib = ImarisLib.ImarisLib()
+    
+      # Get an imaris object with id aImarisId
+      vImarisApplication = vImarisLib.GetApplication(aImarisId)
+    
+      # Get the factory
+      vFactory = vImarisApplication.GetFactory()
+    
+      # Get the currently loaded dataset
+      vImage = vImarisApplication.GetDataSet()
+    
+      # Get the Surpass scene
+      vSurpassScene = vImarisApplication.GetSurpassScene()
+
+We created two simple plugins, one called ChangeIntensity.py and the other called CellCount.py. ChangeIntensity changes the intensity of the Z-stack image. It does this by taking in two inputs, the user’s threshold intensity and intended intensity level, through the following code:
+    
+    global Entry1, Entry2
+    ###########################################################################
+    #aCopyAll=False
+    def dialog():
+        global Entry1, vThreshold, Entry2, vNewHigh
+        vThreshold=Entry1.get()
+        vThreshold=float(vThreshold)
+        vNewHigh=Entry2.get()
+        vNewHigh=float(vNewHigh)
+        root.destroy()
+    
+    root=Tk()
+    root.geometry("200x50-0+0")
+    #Set input as the top level window
+    root.attributes("-topmost", True)
+    ##################################################################
+    #Set input in center on screen
+    # Gets the requested values of the height and widht.
+    windowWidth = root.winfo_reqwidth()
+    windowHeight = root.winfo_reqheight()
+    # Gets both half the screen width/height and window width/height
+    positionRight = int(root.winfo_screenwidth()/2 - windowWidth/2)
+    positionDown = int(root.winfo_screenheight()/2 - windowHeight/2)
+    # Positions the window in the center of the page.
+    root.geometry("+{}+{}".format(positionRight, positionDown))
+    ##################################################################
+    
+    Label(root,text="Targeted Intensity Level:").grid(row=0) ##grid sets the location
+    Entry1=Entry(root,justify='center',width=10)
+    Entry1.grid(row=0, column=1)
+    Entry1.insert(0, 100) # set default entry as 100
+
+    Label(root,text="Intended Intensity Level:").grid(row=1)
+    Entry2=Entry(root,justify='center',width=10)
+    Entry2.grid(row=1, column=1)
+    Entry2.insert(0, 100) 
+    
+    # Creates Button
+    Single=Button(root, text="Change Intensity", bg='blue', fg='white',command=dialog) # Previously defined dialog is called here, but it doesn't necessarily have to be called
+    # Set button location
+    Single.grid(row=1, column=1)
+    # Call the input window for display
+    mainloop()
+    
+We then change the intensity of the image using a function from ImarisLib, which changes any intensity below a certain threshold into a predefined lowest intensity level and any intensity level above the threshold into a predfined highest intensity level. Here we set the lowest intensity level as 0, and the highest level is previously deined by user input. The channel index specifies which channel we want the change in, which we currently set as the first channel (indexed at 0). We also neded to pass in the image data itself so the function know what it is transforming.
+
+    vChannelIndex=0
+    vNewValueLow=0
+    
+    vImarisApplication.GetImageProcessing().ThresholdBothChannel(vImage,vChannelIndex,vThreshold,vNewValueLow,vNewHigh)
+
+The biggest problem with ChangeIntensity is that it directly alters the users data set, which means that once the changed data is savd there is no way to retrieve the original data. However, one of the benefits of this plugin is that it doesn't require any pre-tinkering in the data set prior to using the plugin. On the other hand, CellCount does not directly modify the dataset and does not ask for an input, but does ask for the users to create a surface object first, to which it would count the number of surfaces of. It does so through the following code:
+    
+    vSelected = vImarisApplication.GetSurpassSelection()
+    vSurfaces = vFactory.ToSurfaces(vSelected)
+    vNumberOfSurfaces = vSurfaces.GetNumberOfSurfaces()
+    
+The number of surfaces is then outputted into a text file located in a results folder. The number must first be changed into a string, however, or else the text file is not properly outputted.
+
+    vText = 'Number of Surfaces: ' + str(vNumberOfSurfaces) ##stringify the number
+    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w')
+    f.write(vText)
+    f.close()
+
 
 
 # Conclusion
