@@ -61,22 +61,42 @@ Code to link to ImarisLib:
 ## Getting User Input and Displaying Output
 Use the tkinter Python library to get input from the user and display output through the GUI (Graphical User Interface).
 
-    #GUI imports for inputs and outputs
-    from tkinter import *
-    from tkinter import messagebox
-
-    #Example of Getting User Input through Entry.get() function
-    vThreshold=Entry1.get()
+    global Entry1
     
-    #How to Create a Message Box to Dislay Text Output
-    def __msgbox(aText):
-        vTk = Tkinter.Tk()
-        vTk.wm_title("XTDisplayImarisId")
-        vWidget = Tkinter.Label(vTk, text = aText, justify = 'left', padx = 10, pady = 10)
-        vWidget.pack()
-        vTk.mainloop()
-
-
+    def dialog(): ## If you want to do so converting at the initial entry
+        global Entry1, vChange
+        vChanged=Entry1.get()
+        vChange=float(vChange)
+    
+    root=Tk()
+    root.geometry("200x50-0+0")
+    #Set input as the top level window
+    root.attributes("-topmost", True)
+    ##################################################################
+    #Set input in center on screen
+    # Gets the requested values of the height and widht.
+    windowWidth = root.winfo_reqwidth()
+    windowHeight = root.winfo_reqheight()
+    # Gets both half the screen width/height and window width/height
+    positionRight = int(root.winfo_screenwidth()/2 - windowWidth/2)
+    positionDown = int(root.winfo_screenheight()/2 - windowHeight/2)
+    # Positions the window in the center of the page.
+    root.geometry("+{}+{}".format(positionRight, positionDown))
+    ##################################################################
+    
+    Label(root,text="Prompt for user:).grid(row=0) ##grid sets the location
+    Entry1=Entry(root,justify='center',width=10)
+    Entry1.grid(row=0, column=1)
+    Entry1.insert(0, 100) # set default entry as 100
+    
+    # Creates Button
+    Single=Button(root, text="Change Intensity", bg='blue', fg='white',command=dialog) # Previously defined dialog is called here, but it doesn't necessarily have to be called
+    # Set button location
+    Single.grid(row=1, column=1)
+    # Call the input window for display
+    mainloop()
+    
+    
 ## Navigating to ImarisLib Function Documentation
 
 Open Help > Programming Interface > Data Structures > Data Fields > All
