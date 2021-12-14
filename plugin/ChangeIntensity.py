@@ -43,7 +43,7 @@ def changeIntensity(aImarisId):
         root.destroy()
     
     root=Tk()
-    root.geometry("225x75-0+0")
+    root.geometry("218x75-0+0")
     #Set input as the top level window
     root.attributes("-topmost", True)
     ##################################################################
@@ -68,9 +68,9 @@ def changeIntensity(aImarisId):
     Entry2.grid(row=1, column=1)
     Entry2.insert(0, 100) 
     
-    Single=Button(root, text="Change Intensity", bg='blue', fg='white',command=dialog)
+    Single=Button(root, text="Change", bg='blue', fg='white',command=dialog)
 
-    Single.grid(row=1, column=1)
+    Single.grid(row=2, column=1)
 
     
     mainloop()
@@ -84,7 +84,6 @@ def changeIntensity(aImarisId):
 
     vChannelIndex=0
     vNewValueLow=0
-    vNewValueHigh= 200
     vImarisApplication.GetImageProcessing().ThresholdBothChannel(vImage,vChannelIndex,vThreshold,vNewValueLow,vNewHigh)
 
     
