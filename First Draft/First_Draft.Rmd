@@ -79,7 +79,7 @@ Aside from computational simplicity, python was also the language we were most f
 As the Barresi Lab is still developing their zebrafish data, they state that they would like to use Imaris to do manual calculations. Thus, we are not fully automating their processes yet. We are creating a plugin to find the distance between a user specified region to the farthest brain region. Imaris mainly uses the data models *spots*, *surfaces*, *cells*, and *filaments* to identify and analyze all of the zebrafish data. Initially, the intensity of each object within the image data was the core attibute to create the distance plugin. However, many of the existing plugins use *surfaces* for their calculations and we are concerned about overlooking some important information by looking at intensity alone. Therefore, to create the distance plugin, we use both intensity and the *surface* and *spot* data models.
 
 # Results
-Prior to creating any plugin, we needed to make sure that we have all the setup so that the users can access a working plugin. FIrst step is to add the plugin into the [menu name] by adding the following at the top of the plugin file:
+Prior to creating any plugin, we needed to make sure that we have all the setup so that the users can access a working plugin. First step is to add the plugin into the [menu name] by adding the following at the top of the plugin file:
 
     #    <CustomTools>
     #      <Menu>
@@ -179,4 +179,4 @@ The number of surfaces is then outputted into a text file located in a results f
 # Conclusion
 
 
-
+Within our Github readme file, we can encapsulated some key information pertaining to setting up Imaris for creating python plugins and how to start the plugin creation code. With this information, we hope that the next group to assist the Barresi Lab will be able start creating plugins that are more tailored for the lab's needs. The next group can reference the open source plugins and our own plugins to create new ones that are more complex and specifically made to work with Zebrafish data. A major challenge for our plugin creation was understanding the functions provided by the ImarisLib python library. Since having proper function documentation would have helped us tremendously, we believe that adding documentation about the ImarisLib library that can be shared with everyone else in the lab is necessary As there is minimal documentation about the ImarisLib functions within the provided documentation, it is imperative to create one for the lab that anyone, existing members and newcomers, can access for better understanding. 
