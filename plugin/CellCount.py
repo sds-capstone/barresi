@@ -24,11 +24,6 @@
 
 import ImarisLib
 
-# GUI imports
-from tkinter import *
-from tkinter import messagebox
-from pandas import DataFrame
-
 def surfaceCount(aImarisId):
     # Create an ImarisLib object
     vImarisLib = ImarisLib.ImarisLib()
@@ -36,24 +31,20 @@ def surfaceCount(aImarisId):
     vImarisApplication = vImarisLib.GetApplication(aImarisId)
     # Get the factory
     vFactory = vImarisApplication.GetFactory()
-    # Get the currently loaded dataset
-    vImage = vImarisApplication.GetDataSet()
-    # Get the Surpass scene
-    vSurpassScene = vImarisApplication.GetSurpassScene()
-    
   
+    #Get the Selected Objects
     vSelected = vImarisApplication.GetSurpassSelection()
     
+    #Get the Surface objects
     vSurfaces = vFactory.ToSurfaces(vSelected)
+    
+    #Get the number of surfaces
     vNumberOfSurfaces = vSurfaces.GetNumberOfSurfaces()
 
-
+    #Stringify the number and add to text
     vText = 'Number of Surfaces: ' + str(vNumberOfSurfaces)
-
-    #__msgbox(vText)
-
-    #df = DataFrame({'Point': 1, 'Farthest Distance': vFarthestDistance})
-   # df.to_excel('test.xslx', sheet_name= 'sheet1', index = False)
-    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w')
+    
+    #Write it out into text file
+    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w') #Specifify the rout
     f.write(vText)
     f.close()

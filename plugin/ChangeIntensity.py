@@ -18,7 +18,6 @@ import ImarisLib
 # GUI imports
 from tkinter import *
 from tkinter import messagebox
-from pandas import DataFrame
 
 def changeIntensity(aImarisId):
     # Create an ImarisLib object
@@ -77,13 +76,16 @@ def changeIntensity(aImarisId):
     ############################################################################
     ############################################################################
     
-     #Image properties
     
-
+    ## Get the Dataset
     vImage = vImarisApplication.GetImage(0)
 
+    # Set the Channel Index to the first one
     vChannelIndex=0
+    # Set the new lowest intensity as 0
     vNewValueLow=0
+    
+    # Change the Intensity
     vImarisApplication.GetImageProcessing().ThresholdBothChannel(vImage,vChannelIndex,vThreshold,vNewValueLow,vNewHigh)
 
     
