@@ -10,7 +10,10 @@
 #    </CustomTools>
 #     
 
-#  
+#  Description:
+#  This XTension change the intensity above a user-defined threshold
+#  to a user-defined highest level and any intensity below the threshold
+#  to zero.
 
 
 import ImarisLib
@@ -32,7 +35,6 @@ def changeIntensity(aImarisId):
     vSurpassScene = vImarisApplication.GetSurpassScene()
     global Entry1, Entry2
     ###########################################################################
-    #aCopyAll=False
     def dialog():
         global Entry1, vThreshold, Entry2, vNewHigh
         vThreshold=Entry1.get()
@@ -47,7 +49,7 @@ def changeIntensity(aImarisId):
     root.attributes("-topmost", True)
     ##################################################################
     #Set input in center on screen
-    # Gets the requested values of the height and widht.
+    # Gets the requested values of the height and width.
     windowWidth = root.winfo_reqwidth()
     windowHeight = root.winfo_reqheight()
     # Gets both half the screen width/height and window width/height
@@ -57,22 +59,23 @@ def changeIntensity(aImarisId):
     root.geometry("+{}+{}".format(positionRight, positionDown))
     ##################################################################
     
-    Label(root,text="Targeted Intensity Level:").grid(row=0)
+    Label(root,text="Targeted Intensity Level:").grid(row=0) ##grid sets the location
     Entry1=Entry(root,justify='center',width=10)
     Entry1.grid(row=0, column=1)
-    Entry1.insert(0, 100) 
+    Entry1.insert(0, 100) # set default entry as 100
 
     Label(root,text="Intended Intensity Level:").grid(row=1)
     Entry2=Entry(root,justify='center',width=10)
     Entry2.grid(row=1, column=1)
     Entry2.insert(0, 100) 
     
-    Single=Button(root, text="Change", bg='blue', fg='white',command=dialog)
-
-    Single.grid(row=2, column=1)
-
-    
+    # Creates Button
+    Single=Button(root, text="Change Intensity", bg='blue', fg='white',command=dialog) # Previously defined dialog is called here
+    # Set button location
+    Single.grid(row=1, column=1)
+    # Call the input window for display
     mainloop()
+
     ############################################################################
     ############################################################################
     
