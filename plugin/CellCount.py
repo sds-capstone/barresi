@@ -9,17 +9,9 @@
 #      </Menu>
 #    </CustomTools>
 
-#  Description:
-#  This XTension will copy the filament in the specified time point and
-#  copy it to selected Destination timepoint.  All spines and dendrites
-#  will be copied.   Default options will take filaments in current visible
-#  timepoint to the next timepoint.
-
-#  This process will NOT overwrite any existing filaments that may be in
-#  the Destination timepoint.
-#
-#There is also and option to copy Filaments from a specific timepoint to all
-#timepoints.   Note:  This will NOT duplicate filament in original timepoint.
+# Description:
+#  This XTension gets the number of surfaces present and
+#   outputs it into a text file.
 
 
 import ImarisLib
@@ -45,6 +37,6 @@ def surfaceCount(aImarisId):
     vText = 'Number of Surfaces: ' + str(vNumberOfSurfaces)
     
     #Write it out into text file
-    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w') #Specifify the rout
+    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w') #Specifify the route and file name
     f.write(vText)
     f.close()
