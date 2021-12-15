@@ -1,0 +1,182 @@
+---
+title: Developing Data Analysis Tools for Zebrafish Data in IMARIS
+author:
+  - name: Catherine Kung
+    affil: 1,\dagger,*
+  - name: Summer Yu
+    affil: 1,\dagger,* 
+  - name:  Haley Schmidt
+    affil: 1,\dagger,*
+  - name:  Carol Milton
+    affil: 1,\dagger,*
+affiliation:
+  - num: 1
+    address: |
+      Smith College - SDS department
+      1 Chapin Way, Northampton, MA, USA
+firstnote: |
+  These authors contributed equally to this work.
+correspondence: |
+  ckung@smith.edu; Tel.: +1-413-801-1410.
+  syu@smith.edu; Tel.: +1-413-404-7578.
+  heschmidt@smith.edu; Tel.: +1-651-315-2760.
+  ctmilton@smith.edu; Tel.: +1-508-930-5791.
+journal: 
+type: 
+status: 
+bibliography: mybibfile.bib
+appendix: appendix.tex
+simplesummary: |
+  Using IMARIS to visualize embryo development of Zebra fish
+abstract: |
+  The Barresi Lab at Smith College recently acquired a light-sheet microscope through a grant from the Arnold and Mabel Beckman Foundation. The lab is interested in studying bio-electric patterns in embryonic development of zebrafish, which utilizes the 3D images from this microscope. Imaris, a newly implemented software in the lab, analyzes images of embryos from the microscope. Although it is an excellent tool for 3D image analysis, the lab requires more tailored processes to make computations more efficient. To do so, we are writing python plugins for Imaris which automate fluorescence, intensity, and volume calculations. These plugins will ultimately streamline the process of analyzing incoming data from the light-sheet microscope.
+keywords: |
+  Imaris; Plugin; Automate
+acknowledgement: |
+
+authorcontributions: |
+
+conflictsofinterest: |
+  The authors declare no conflict of interest.
+sampleavailability: |
+output: rticles::mdpi_article
+---
+
+# Introduction
+The Barresi Lab at Smith College is a developmental biology lab led by Professor Michael Barresi. They investigate the molecular and cellular mechanisms which govern how the nervous system is built by using zebrafish as a model system. The lab’s research is divided into three projects to address how the neurons are created, how the nervous system gets wired, and what sorts of environmental factors impact neural development. The lab has recently acquired a new light-sheet miscroscope which sends 3D images of zebrafish embryos to be analyzed in Imaris. Our group is working with the lab to achieve the following goals:
+1) Use Imaris to find evidence that supports the goals of the lab 
+2) Document protocols for going from data aggregation to data utilization 
+3) Create a plugin for Imaris to automate data analyses on 3D and 4D images. Questions the lab is interested in include: 
+    a) Are bioelectric signals important in creating the early brain? 
+    b) Does the migratorial cell population (crimneou) lay the groundwork for the neurons to form the formation of our face? 
+    c) How do embryonic brains form for Zebra Fishes? 
+    d) What is the distance of each region to the farthest brain region?
+Imaris is an Interactive Microscopy Image Analysis software offered by Bitplane that allows users to process and analyze fluorescent 3D and 4D microscopy images [@GAUTIER2021109038]. Although previously the lab had other software that allowed for 3D visualizations, it didn't have as high of a resolution as Imaris, therefore the lab had decided to switch software. However, they are not as familiar with this software, and thus need well documented protocols to help guide their usage. 
+Currently, analysis of data requires users to manually create reference points and surfaces across the image to gather information. Such a process can be lengthy and difficult. As such, plugins are needed to help make the calculations and observations easier. While many plugins exist in Imaris' official website \footnote{\texttt{Imaris Open}: \url{https://imaris.oxinst.com/open/}.}, many are either for older versions of Imaris or don't interact with or calculate the statistics of the specific brain regions that interests the Barresi Lab. 
+Due to the restricted time we have, we decide to focus solely on the last plugin that calculates the distance of each region to the farthest brain region. The full work is available on GitHub\footnote{\texttt{GitHub Repository}: \url{https://github.com/sds-capstone/barresi}.}
+
+
+# Data
+Data employed in this project is in the form of z-stack imaging, which is a compilation of photographs taken at interval planes of various focuses of a single pollen grain. Each clip of the photographs serves as an image in the specific file types which are compatible with Imaris software. Together, these photographs then are combined into a video, which is stored in the *Pollen Database* for the users to explore by freezing at any clips of the video. Accordingly, morphological characteristics of the pollen for the species also are included in the database. The general purpose of maintaining this database is to generate a detailed document recording the process of data aggregation to data utilization [@NIKONSMICROSCOPY]. The source of data for this study is the light-sheet microscopy system established in Professor Barresi's lab. More specifically, the microscopy system takes photographs of the developmental stages zebrafish's embryo. 
+
+In this study, the dependent variables are development time for each embryonic stage, intensity of dyed embryos stratified by the factor of age, and spatial position of embryos. The independent variables are the strength of the trans-genes, tools needed in order to produce the fluorescence. What's more, the units of observation in this study is the number of embryos collected in a batch, which composes the number of fertilized eggs a female Zebra fish produced in a hatch. 
+
+Some of the limitations of this research is the speed of the light-sheet microscopy we utilize, since the system takes 10 seconds to take a photograph of a single Z-stack imaging. Additionally, another major constraint will be its capacity in taking a given number of embryos in a given time frame. For now, the capacity and the speed of the light-sheet microscopy system allows a production of 240 samples for a week if collecting a single batch a week. Mistakes in the process of data collection also can pose damage to the embryo samples. 
+
+Files of zebrafish embryo slices then directly be pipeline into the Imaris Software to create videos from 1 dimensional to 4 dimensional data files, which serves as records for each developmental trajectory.
+
+
+# Methods
+
+Based on results generated from previous studies using confocal microscopy images as data for analysis purposes, even a single software package from a workable analytical program can be used for data procession [@ZINCHUK2009125]. Although there exist a number of multidimensional analytical programs which allows for accurate quantification via high quality visualization, like BioImageXD and Icy, Imaris is the most suitable platform to use in that it has quality image resolution and built-in algorithms to generate workable plug-ins and fundamental descriptive statistics directly in an excel document format. 
+
+During the early planning stages of this study, whether to employ ImageJ or Imaris as the major analytical program constitutes an imperative step. Since the nature of the study is to eventually generate a workable plug-in to assist in fulfilling the research goals of the Barresi lab, the computable feasibility is the most essential feature to focus on when choosing an analytical program to work with. Although both ImageJ and Imaris can generate Multi-channel, colored images, ImageJ has functions in the form of individual commands allowing customization while Imaris has pre-programmed image analysis tools organized within a clearly guided interface. One significant advantage of Imaris is its feature of allowing the user to rotate the z-stack along both the x and y-axis with 360 degrees rotation. Moreover, the utilization of 3D reconstructions in Imaris assists in visualizing sophisticated biological structures, in the case of this study, the Zebrafish brain. With the capability of generating reproducible quantitative procedures embedded in Imaris for analyzing immunofluorescence labeled embryos [@miura-hal-02910986], the study is able to capture more complete assessment of the neural connections between small structures of the brain, for instance, the communication activities between the two hemispheres. 
+
+Originally, derived from the fact that Python has more computational simplicity and our past coding experience mainly resided in Python, we first navigated the computational software to be Jupytor notebook, where we developed the code for the plugin envisioned by Barresi lab. Then, connection of the work Folder with z-stack images can be connected to the Imaris python path based on protocols from Imaris Xtension User Guide on creating a path for Xtension in Imaris. Python version 3.7.12 was downloaded to the Imaris workstation through the official website [@pythonorg] . After downloading Jupytor and Git for windows in console command, we failed to set up Github extension for Jupytor with the guideline from a public Github repository [@wallen_2021]. It halted with repeating error messages when establishing git configurations. Later, Visual Studio (VS) Code was finalized as the computational software for our plug-in development based on its smooth connection with the Github desktop, codes developed in VS code can be pushed to Github without the need for an extension.
+
+Aside from computational simplicity, python was also the language we were most familiar with out of the languages available for direct interaction with the Imaris software function. To create the plugin, we linked Visual Studios onto Imaris by adding the Imaris path and PYTHONPATH into the environment. To interact with the Imaris API, we needed to place in `import ImarisLib.py` in the plugin file, Lastly, we grouped all the possible plugins into a folder and added the path to the folder into Imaris so that all the plugins in that folder are accesible.
+
+As the Barresi Lab is still developing their zebrafish data, they state that they would like to use Imaris to do manual calculations. Thus, we are not fully automating their processes yet. We are creating a plugin to find the distance between a user specified region to the farthest brain region. Imaris mainly uses the data models *spots*, *surfaces*, *cells*, and *filaments* to identify and analyze all of the zebrafish data. Initially, the intensity of each object within the image data was the core attibute to create the distance plugin. However, many of the existing plugins use *surfaces* for their calculations and we are concerned about overlooking some important information by looking at intensity alone. Therefore, to create the distance plugin, we use both intensity and the *surface* and *spot* data models.
+
+# Results
+Prior to creating any plugin, we needed to make sure that we have all the setup so that the users can access a working plugin. First step is to add the plugin into the [menu name] by adding the following at the top of the plugin file:
+
+    #    <CustomTools>
+    #      <Menu>
+    #       <Item name="Name Shown on Menu" icon="Python3">
+    #         <Command>Python3XT::NameoftheFunction(%i)</Command>
+    #       </Item>
+    #      </Menu>
+    #    </CustomTools>
+We could also create submenus by adding encompassing <Item></Item> in <Submenu></Submenu>, but chose not to as we don't have other similar plugins at the moment. We then finished the setup by linking the file to Imaris through the following code:
+    import ImarisLib
+
+    def BLANK(aImarisId):
+
+      # Create an ImarisLib object
+      vImarisLib = ImarisLib.ImarisLib()
+    
+      # Get an imaris object with id aImarisId
+      vImarisApplication = vImarisLib.GetApplication(aImarisId)
+    
+      # Get the factory
+      vFactory = vImarisApplication.GetFactory()
+    
+      # Get the currently loaded dataset
+      vImage = vImarisApplication.GetDataSet()
+    
+      # Get the Surpass scene
+      vSurpassScene = vImarisApplication.GetSurpassScene()
+
+We created two simple plugins, one called ChangeIntensity.py and the other called CellCount.py. ChangeIntensity changes the intensity of the Z-stack image. It does this by taking in two inputs, the user’s threshold intensity and intended intensity level, through the following code:
+    
+    global Entry1, Entry2
+    ###########################################################################
+    #aCopyAll=False
+    def dialog():
+        global Entry1, vThreshold, Entry2, vNewHigh
+        vThreshold=Entry1.get()
+        vThreshold=float(vThreshold)
+        vNewHigh=Entry2.get()
+        vNewHigh=float(vNewHigh)
+        root.destroy()
+    
+    root=Tk()
+    root.geometry("200x50-0+0")
+    #Set input as the top level window
+    root.attributes("-topmost", True)
+    ##################################################################
+    #Set input in center on screen
+    # Gets the requested values of the height and widht.
+    windowWidth = root.winfo_reqwidth()
+    windowHeight = root.winfo_reqheight()
+    # Gets both half the screen width/height and window width/height
+    positionRight = int(root.winfo_screenwidth()/2 - windowWidth/2)
+    positionDown = int(root.winfo_screenheight()/2 - windowHeight/2)
+    # Positions the window in the center of the page.
+    root.geometry("+{}+{}".format(positionRight, positionDown))
+    ##################################################################
+    
+    Label(root,text="Targeted Intensity Level:").grid(row=0) ##grid sets the location
+    Entry1=Entry(root,justify='center',width=10)
+    Entry1.grid(row=0, column=1)
+    Entry1.insert(0, 100) # set default entry as 100
+
+    Label(root,text="Intended Intensity Level:").grid(row=1)
+    Entry2=Entry(root,justify='center',width=10)
+    Entry2.grid(row=1, column=1)
+    Entry2.insert(0, 100) 
+    
+    # Creates Button
+    Single=Button(root, text="Change Intensity", bg='blue', fg='white',command=dialog) # Previously defined dialog is called here, but it doesn't necessarily have to be called
+    # Set button location
+    Single.grid(row=1, column=1)
+    # Call the input window for display
+    mainloop()
+    
+We then change the intensity of the image using a function from ImarisLib, which changes any intensity below a certain threshold into a predefined lowest intensity level and any intensity level above the threshold into a predfined highest intensity level. Here we set the lowest intensity level as 0, and the highest level is previously deined by user input. The channel index specifies which channel we want the change in, which we currently set as the first channel (indexed at 0). We also neded to pass in the image data itself so the function know what it is transforming.
+
+    vChannelIndex=0
+    vNewValueLow=0
+    
+    vImarisApplication.GetImageProcessing().ThresholdBothChannel(vImage,vChannelIndex,vThreshold,vNewValueLow,vNewHigh)
+
+The biggest problem with ChangeIntensity is that it directly alters the users data set, which means that once the changed data is savd there is no way to retrieve the original data. However, one of the benefits of this plugin is that it doesn't require any pre-tinkering in the data set prior to using the plugin. On the other hand, CellCount does not directly modify the dataset and does not ask for an input, but does ask for the users to create a surface object first, to which it would count the number of surfaces of. It does so through the following code:
+    
+    vSelected = vImarisApplication.GetSurpassSelection()
+    vSurfaces = vFactory.ToSurfaces(vSelected)
+    vNumberOfSurfaces = vSurfaces.GetNumberOfSurfaces()
+    
+The number of surfaces is then outputted into a text file located in a results folder. The number must first be changed into a string, however, or else the text file is not properly outputted.
+
+    vText = 'Number of Surfaces: ' + str(vNumberOfSurfaces) ##stringify the number
+    f = open(r'C:\Users\zfishlab\Documents\GitHub\barresi\Results\CellCount.txt', 'w')
+    f.write(vText)
+    f.close()
+
+
+
+# Conclusion
+
+
+Within our Github readme file, we can encapsulated some key information pertaining to setting up Imaris for creating python plugins and how to start the plugin creation code. With this information, we hope that the next group to assist the Barresi Lab will be able start creating plugins that are more tailored for the lab's needs. The next group can reference the open source plugins and our own plugins to create new ones that are more complex and specifically made to work with Zebrafish data. A major challenge for our plugin creation was understanding the functions provided by the ImarisLib python library. Since having proper function documentation would have helped us tremendously, we believe that adding documentation about the ImarisLib library that can be shared with everyone else in the lab is necessary As there is minimal documentation about the ImarisLib functions within the provided documentation, it is imperative to create one for the lab that anyone, existing members and newcomers, can access for better understanding. 
